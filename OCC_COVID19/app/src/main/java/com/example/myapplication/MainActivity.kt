@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
 
 
         //키값
-        val key = "Decoding key"
+        val key = "app key"
         //현재 페이지번호
         val pageNo = "&pageNo=1"
         //한 페이지 결과 수
@@ -87,10 +87,22 @@ var url: String): Runnable {
 
 
                     println("=========${i+1}=========")
-                    text += "${i + 1}번 캠핑장 \n"
+                    text += "${i + 1}번 \n"
 
-                    println("1. 주소 : ${elem.getElementsByTagName("createDt").item(0).textContent}")
-                    text += "1. 주소 : ${elem.getElementsByTagName("createDt").item(0).textContent} \n"
+                    println("1. 기준일시 : ${elem.getElementsByTagName("stdDay").item(0).textContent}")
+                    text += "1. 기준일시 : ${elem.getElementsByTagName("stdDay").item(0).textContent} \n"
+
+                    println("2. 사망자 수 : ${elem.getElementsByTagName("deathCnt").item(0).textContent}")
+                    text += "2. 사망자 수 : ${elem.getElementsByTagName("deathCnt").item(0).textContent} \n"
+
+                    println("3. 시도명 : ${elem.getElementsByTagName("gubun").item(0).textContent}")
+                    text += "3. 시도명 : ${elem.getElementsByTagName("gubun").item(0).textContent} \n"
+
+                    println("4. 전일대비 증감 수 : ${elem.getElementsByTagName("incDec").item(0).textContent}")
+                    text += "4. 전일대비 증감 수 : ${elem.getElementsByTagName("incDec").item(0).textContent} \n"
+
+                    println("5. 확진자 수 : ${elem.getElementsByTagName("defCnt").item(0).textContent}")
+                    text += "5. 확진자 수 : ${elem.getElementsByTagName("defCnt").item(0).textContent} \n"
 
                 }
             }
