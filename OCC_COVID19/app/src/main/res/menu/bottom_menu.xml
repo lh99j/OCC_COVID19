@@ -1,28 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/first_tab"
-        app:showAsAction="always"
+        android:title="Home"
         android:enabled="true"
-        android:title="Write" />
+        android:id="@+id/menu_home"/>
     <item
-        android:id="@+id/second_tab"
-        app:showAsAction="always"
+        android:title="Favorites"
         android:enabled="true"
-        android:title="Maps"/>
-
+        android:id="@+id/menu_favorites"/>
     <item
-        android:id="@+id/third_tab"
-        app:showAsAction="always"
+        android:title="Email"
         android:enabled="true"
-        android:title="Record">
-    </item>
-
+        android:id="@+id/menu_search"/>
     <item
-        android:id="@+id/fourth_tab"
-        app:showAsAction="always"
+        android:title="Email"
         android:enabled="true"
-        android:title="Setting">
-    </item>
+        android:id="@+id/menu_setting"/>
 </menu>
