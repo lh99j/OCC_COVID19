@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
 
 
         //키값
-        val key = "app key"
+        val key = "${BuildConfig.App_key}"
         //현재 페이지번호
         val pageNo = "&pageNo=1"
         //한 페이지 결과 수
