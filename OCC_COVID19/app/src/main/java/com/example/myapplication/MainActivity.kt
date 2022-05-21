@@ -10,7 +10,10 @@ import org.w3c.dom.Document
 import org.w3c.dom.Element
 import org.w3c.dom.Node
 import org.w3c.dom.NodeList
+import java.text.SimpleDateFormat
 import javax.xml.parsers.DocumentBuilderFactory
+import java.time.LocalDate
+import java.time.LocalDateTime
 
 
 var text = ""
@@ -20,12 +23,14 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivityMainBinding.inflate(layoutInflater)
 
-        binding.txt.text = ""
-
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
 
+        //현재시간 구하기
+        val Time : Long = System.currentTimeMillis()
+        val Timestr = SimpleDateFormat("yyyy-MM-dd").format(Time)
+        val CurrentTime = Timestr.replace("[^0-9]".toRegex(), "")
 
         //키값
         val key = "${BuildConfig.App_key}"
@@ -34,9 +39,9 @@ class MainActivity : AppCompatActivity() {
         //한 페이지 결과 수
         val numOfRows = "&numOfRows=10"
         // 검색할 생성일 범위의 시작
-        val startCreateDt = "&startCreateDt=20220516"
+        val startCreateDt = "&startCreateDt=${CurrentTime}"
         //검색할 생성일 범의의 끝
-        val endCreateDt = "&endCreateDt=20220516"
+        val endCreateDt = "&endCreateDt=${CurrentTime}"
         //API 정보를 가지고 있는 주소
         var url = "http://openapi.data.go.kr/openapi/service/rest/Covid19/getCovid19SidoInfStateJson?serviceKey="+key+pageNo+numOfRows+startCreateDt+endCreateDt
         // 버튼을 누르면 쓰레드 동작
