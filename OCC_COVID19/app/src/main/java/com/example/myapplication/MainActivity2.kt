@@ -21,12 +21,12 @@ class MainActivity2 : AppCompatActivity() {
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main2)
-        supportFragmentManager.beginTransaction().add(fl.id, OneFragment()).commit()
+        supportFragmentManager.beginTransaction().add(fl.id, HomeFragment()).commit()
 
         bn.setOnItemSelectedListener {
             replaceFragment(
                 when(it.itemId){
-                    R.id.menu_home -> OneFragment()
+                    R.id.menu_home -> HomeFragment()
                     R.id.menu_favorites -> TwoFragment()
                     else -> ThreeFragment()
                 }
