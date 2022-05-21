@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.FrameLayout
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
+import androidx.navigation.ui.setupWithNavController
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.example.myapplication.databinding.ActivityHomeBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -30,8 +32,8 @@ class HomeActivity : AppCompatActivity() {
             replaceFragment(
                 when(it.itemId){
                     R.id.menu_home -> HomeFragment()
-                    R.id.menu_favorites -> TwoFragment()
-                    else -> ThreeFragment()
+                    R.id.menu_favorites -> HomeFragment()
+                    else -> HomeFragment()
                 }
             )
             true

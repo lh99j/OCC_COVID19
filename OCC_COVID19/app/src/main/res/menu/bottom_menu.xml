@@ -3,17 +3,21 @@
     <item
         android:title="Home"
         android:enabled="true"
-        android:id="@+id/menu_home"/>
+        android:id="@+id/menu_home"
+        android:icon="@android:drawable/ic_menu_search" />
     <item
         android:title="Favorites"
         android:enabled="true"
-        android:id="@+id/menu_favorites"/>
+        android:id="@+id/menu_favorites"
+        android:icon="@android:drawable/ic_menu_search" />
     <item
         android:title="Email"
         android:enabled="true"
-        android:id="@+id/menu_search"/>
+        android:icon="@drawable/searchimg"
+        android:id="@+id/menu_search" />
     <item
         android:title="Email"
         android:enabled="true"
-        android:id="@+id/menu_setting"/>
+        android:id="@+id/menu_setting"
+        android:icon="@android:drawable/ic_menu_search" />
 </menu>

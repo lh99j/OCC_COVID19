@@ -27,8 +27,8 @@ class MainActivity2 : AppCompatActivity() {
             replaceFragment(
                 when(it.itemId){
                     R.id.menu_home -> HomeFragment()
-                    R.id.menu_favorites -> TwoFragment()
-                    else -> ThreeFragment()
+                    R.id.menu_favorites -> HomeFragment()
+                    else -> HomeFragment()
                 }
             )
             true
