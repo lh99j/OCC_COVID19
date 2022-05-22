@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#d8e2dc"
     tools:context=".CovidFragment">
+
 
     <ImageView
         android:id="@+id/view"
@@ -13,11 +15,10 @@
         android:layout_gravity="center"
         android:background="#00FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintHorizontal_bias="0.483"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/age1" />
-
 
     <TextView
         android:id="@+id/totalpa"
@@ -50,14 +51,14 @@
         app:layout_constraintTop_toTopOf="@+id/view" />
 
     <TextView
-        android:id="@+id/danger"
+        android:id="@+id/board"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="84dp"
         android:layout_marginTop="32dp"
         android:fontFamily="@font/bmjua"
         android:gravity="center_horizontal"
-        android:text="위중증자"
+        android:text="해외발생"
         android:textColor="#707070"
         android:textSize="12sp"
         android:textStyle="normal"
@@ -65,7 +66,7 @@
         app:layout_constraintTop_toTopOf="@+id/view" />
 
     <TextView
-        android:id="@+id/end"
+        android:id="@+id/covidRate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="92dp"
@@ -73,12 +74,12 @@
         android:layout_marginRight="52dp"
         android:fontFamily="@font/bmjua"
         android:gravity="center_horizontal"
-        android:text="완치"
+        android:text="발생률"
         android:textColor="#707070"
         android:textSize="12sp"
         android:textStyle="normal"
         app:layout_constraintRight_toRightOf="@id/view"
-        app:layout_constraintStart_toStartOf="@+id/danger"
+        app:layout_constraintStart_toStartOf="@+id/board"
         app:layout_constraintTop_toTopOf="@+id/view" />
 
     <TextView
@@ -90,6 +91,7 @@
         android:fontFamily="@font/bmjua"
         android:text="13,095,631"
         android:textSize="16sp"
+        android:textColor="#e22020"
         app:layout_constraintBottom_toBottomOf="@+id/view"
         app:layout_constraintStart_toStartOf="@+id/view"
         app:layout_constraintTop_toBottomOf="@+id/totalpa"
@@ -99,25 +101,28 @@
         android:id="@+id/dead"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="88dp"
+        android:layout_marginStart="100dp"
         android:layout_marginTop="27dp"
         android:fontFamily="@font/bmjua"
         android:text="13,095,631"
+        android:textColor="#327bc4"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="@+id/view"
         app:layout_constraintStart_toStartOf="@+id/total_covid"
         app:layout_constraintTop_toBottomOf="@+id/totalpa"
         app:layout_constraintVertical_bias="0.0" />
 
+
     <TextView
         android:id="@+id/critically_ill"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="88dp"
+        android:layout_marginStart="104dp"
         android:layout_marginTop="27dp"
         android:fontFamily="@font/bmjua"
         android:text="13,095,631"
         android:textSize="16sp"
+        android:textColor="#f6bb43"
         app:layout_constraintBottom_toBottomOf="@+id/view"
         app:layout_constraintStart_toStartOf="@+id/dead"
         app:layout_constraintTop_toBottomOf="@+id/totalpa"
@@ -127,7 +132,7 @@
         android:id="@+id/cure"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="88dp"
+        android:layout_marginStart="76dp"
         android:layout_marginTop="73dp"
         android:fontFamily="@font/bmjua"
         android:text="13,095,631"
@@ -136,7 +141,6 @@
         app:layout_constraintStart_toStartOf="@+id/critically_ill"
         app:layout_constraintTop_toTopOf="@+id/view"
         app:layout_constraintVertical_bias="0.0" />
-
 
     <View
         android:id="@+id/view2"
@@ -480,7 +484,7 @@
         android:layout_marginTop="44dp"
         android:fontFamily="@font/bmjua"
         android:gravity="center_horizontal"
-        android:text="1차 접종률"
+        android:text="1차 당일 접종"
         android:textColor="#707070"
         android:textSize="12sp"
         android:textStyle="normal"
@@ -495,7 +499,7 @@
         android:layout_marginTop="44dp"
         android:fontFamily="@font/bmjua"
         android:gravity="center_horizontal"
-        android:text="1차 접종률"
+        android:text="2차 당일 접종"
         android:textColor="#707070"
         android:textSize="12sp"
         android:textStyle="normal"
@@ -510,7 +514,7 @@
         android:layout_marginTop="44dp"
         android:fontFamily="@font/bmjua"
         android:gravity="center_horizontal"
-        android:text="1차 접종률"
+        android:text="3차 당일 접종"
         android:textColor="#707070"
         android:textSize="12sp"
         android:textStyle="normal"
@@ -521,11 +525,11 @@
         android:id="@+id/one_vaccine_value"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
+        android:layout_marginStart="60dp"
         android:layout_marginTop="44dp"
         android:fontFamily="@font/bmjua"
         android:gravity="center_horizontal"
-        android:text="164,257"
+        android:text="45,048,812"
         android:textColor="#e22020"
         android:textSize="12sp"
         android:textStyle="normal"
@@ -536,11 +540,11 @@
         android:id="@+id/two_vaccine_value"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
+        android:layout_marginStart="60dp"
         android:layout_marginTop="44dp"
         android:fontFamily="@font/bmjua"
         android:gravity="center_horizontal"
-        android:text="164,257"
+        android:text="44,569,425"
         android:textColor="#e22020"
         android:textSize="12sp"
         android:textStyle="normal"
@@ -551,11 +555,11 @@
         android:id="@+id/three_vaccine_value"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
+        android:layout_marginStart="60dp"
         android:layout_marginTop="44dp"
         android:fontFamily="@font/bmjua"
         android:gravity="center_horizontal"
-        android:text="164,257"
+        android:text="33,262,827"
         android:textColor="#e22020"
         android:textSize="12sp"
         android:textStyle="normal"
@@ -570,7 +574,7 @@
         android:layout_marginTop="44dp"
         android:fontFamily="@font/bmjua"
         android:gravity="center_horizontal"
-        android:text="164,257"
+        android:text="528"
         android:textColor="#327bc4"
         android:textSize="12sp"
         android:textStyle="normal"
@@ -585,7 +589,7 @@
         android:layout_marginTop="44dp"
         android:fontFamily="@font/bmjua"
         android:gravity="center_horizontal"
-        android:text="164,257"
+        android:text="770"
         android:textColor="#327bc4"
         android:textSize="12sp"
         android:textStyle="normal"
@@ -600,7 +604,7 @@
         android:layout_marginTop="44dp"
         android:fontFamily="@font/bmjua"
         android:gravity="center_horizontal"
-        android:text="164,257"
+        android:text="2,926"
         android:textColor="#327bc4"
         android:textSize="12sp"
         android:textStyle="normal"

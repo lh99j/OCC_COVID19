@@ -34,7 +34,8 @@ class HomeActivity : AppCompatActivity() {
                 when(it.itemId){
                     R.id.menu_home -> HomeFragment()
                     R.id.menu_favorites -> HomeFragment()
-                    else -> HomeFragment()
+                    R.id.menu_search -> HomeFragment()
+                    else -> SettingFragment()
                 }
             )
             true

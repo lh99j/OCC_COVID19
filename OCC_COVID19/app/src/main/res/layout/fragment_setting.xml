@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#d8e2dc"
+    tools:context=".SettingFragment">
+
+    <View
+        android:id="@+id/alarm"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/setting_screen"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/alarmimg"
+        android:layout_width="77dp"
+        android:layout_height="77dp"
+        android:layout_marginTop="24dp"
+        android:src="@drawable/alarm"
+        app:layout_constraintEnd_toEndOf="@+id/alarm"
+        app:layout_constraintStart_toStartOf="@+id/alarm"
+        app:layout_constraintTop_toTopOf="@+id/alarm" />
+
+    <TextView
+        android:id="@+id/alarm_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/bmjua"
+        android:gravity="center_horizontal"
+        android:text="알람 설정"
+        android:textColor="#707070"
+        android:textSize="14sp"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="@+id/alarm"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="@+id/alarm"
+        app:layout_constraintTop_toBottomOf="@+id/alarmimg" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/bmjua"
+        android:gravity="center_horizontal"
+        android:text="정보 갱신 알람 설정"
+        android:textColor="#707070"
+        android:textSize="9sp"
+        android:layout_marginTop="7dp"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="@+id/alarm"
+        app:layout_constraintStart_toStartOf="@+id/alarm"
+        app:layout_constraintTop_toBottomOf="@+id/alarm_text" />
+
+    <View
+        android:id="@+id/app"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/setting_screen"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/appimg"
+        android:layout_width="77dp"
+        android:layout_height="77dp"
+        android:layout_marginTop="24dp"
+        android:src="@drawable/app"
+        app:layout_constraintEnd_toEndOf="@+id/app"
+        app:layout_constraintStart_toStartOf="@+id/app"
+        app:layout_constraintTop_toTopOf="@+id/app" />
+
+    <TextView
+        android:id="@+id/app_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/bmjua"
+        android:gravity="center_horizontal"
+        android:text="화면 설정"
+        android:textColor="#707070"
+        android:textSize="14sp"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="@+id/app"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="@+id/app"
+        app:layout_constraintTop_toBottomOf="@+id/appimg" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/bmjua"
+        android:gravity="center_horizontal"
+        android:text="글자 크기, 라이트/다크 모드 설정"
+        android:textColor="#707070"
+        android:textSize="9sp"
+        android:layout_marginTop="7dp"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="@+id/app"
+        app:layout_constraintStart_toStartOf="@+id/app"
+        app:layout_constraintTop_toBottomOf="@+id/app_text" />
+
+
+    <View
+        android:id="@+id/db"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/setting_screen"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/alarm" />
+
+    <ImageView
+        android:id="@+id/dbimg"
+        android:layout_width="77dp"
+        android:layout_height="77dp"
+        android:layout_marginTop="24dp"
+        android:src="@drawable/db"
+        app:layout_constraintEnd_toEndOf="@+id/db"
+        app:layout_constraintStart_toStartOf="@+id/db"
+        app:layout_constraintTop_toTopOf="@+id/db" />
+
+    <TextView
+        android:id="@+id/db_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/bmjua"
+        android:gravity="center_horizontal"
+        android:text="데이터 정보"
+        android:textColor="#707070"
+        android:textSize="14sp"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="@+id/db"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="@+id/db"
+        app:layout_constraintTop_toBottomOf="@+id/dbimg" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/bmjua"
+        android:gravity="center_horizontal"
+        android:text="사용 데이터, 사용 API 등"
+        android:textColor="#707070"
+        android:textSize="9sp"
+        android:layout_marginTop="7dp"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="@+id/db"
+        app:layout_constraintStart_toStartOf="@+id/db"
+        app:layout_constraintTop_toBottomOf="@+id/db_text" />
+
+
+
+    <View
+        android:id="@+id/info"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/setting_screen"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/app" />
+
+    <ImageView
+        android:id="@+id/infoimg"
+        android:layout_width="77dp"
+        android:layout_height="77dp"
+        android:layout_marginTop="24dp"
+        android:src="@drawable/info"
+        app:layout_constraintEnd_toEndOf="@+id/info"
+        app:layout_constraintStart_toStartOf="@+id/info"
+        app:layout_constraintTop_toTopOf="@+id/info" />
+
+    <TextView
+        android:id="@+id/info_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/bmjua"
+        android:gravity="center_horizontal"
+        android:text="앱 정보"
+        android:textColor="#707070"
+        android:textSize="14sp"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="@+id/info"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="@+id/info"
+        app:layout_constraintTop_toBottomOf="@+id/infoimg" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/bmjua"
+        android:gravity="center_horizontal"
+        android:text="버전, 앱 초기화 등"
+        android:textColor="#707070"
+        android:textSize="9sp"
+        android:layout_marginTop="7dp"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="@+id/info"
+        app:layout_constraintStart_toStartOf="@+id/info"
+        app:layout_constraintTop_toBottomOf="@+id/info_text" />
+
+
+
+    <View
+        android:id="@+id/update"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/setting_screen"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/db" />
+
+    <ImageView
+        android:id="@+id/updateimg"
+        android:layout_width="77dp"
+        android:layout_height="77dp"
+        android:layout_marginTop="24dp"
+        android:src="@drawable/update"
+        app:layout_constraintEnd_toEndOf="@+id/update"
+        app:layout_constraintStart_toStartOf="@+id/update"
+        app:layout_constraintTop_toTopOf="@+id/update" />
+
+    <TextView
+        android:id="@+id/update_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/bmjua"
+        android:gravity="center_horizontal"
+        android:text="공지사항"
+        android:textColor="#707070"
+        android:textSize="14sp"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="@+id/update"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="@+id/update"
+        app:layout_constraintTop_toBottomOf="@+id/updateimg" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/bmjua"
+        android:gravity="center_horizontal"
+        android:text="변경사항, 업데이트등"
+        android:textColor="#707070"
+        android:textSize="9sp"
+        android:layout_marginTop="7dp"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="@+id/update"
+        app:layout_constraintStart_toStartOf="@+id/update"
+        app:layout_constraintTop_toBottomOf="@+id/update_text" />
+
+    <View
+        android:id="@+id/center"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/setting_screen"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/info" />
+
+    <ImageView
+        android:id="@+id/centerimg"
+        android:layout_width="77dp"
+        android:layout_height="77dp"
+        android:layout_marginTop="24dp"
+        android:src="@drawable/sv"
+        app:layout_constraintEnd_toEndOf="@+id/center"
+        app:layout_constraintStart_toStartOf="@+id/center"
+        app:layout_constraintTop_toTopOf="@+id/center" />
+
+    <TextView
+        android:id="@+id/center_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/bmjua"
+        android:gravity="center_horizontal"
+        android:text="고객 센터"
+        android:textColor="#707070"
+        android:textSize="14sp"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="@+id/center"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="@+id/center"
+        app:layout_constraintTop_toBottomOf="@+id/centerimg" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/bmjua"
+        android:gravity="center_horizontal"
+        android:text="문의, 라이선스 정보, Q&amp;A"
+        android:textColor="#707070"
+        android:textSize="9sp"
+        android:layout_marginTop="7dp"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="@+id/center"
+        app:layout_constraintStart_toStartOf="@+id/center"
+        app:layout_constraintTop_toBottomOf="@+id/center_text" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

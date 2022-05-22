@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#d8e2dc"
     tools:context=".AgeFragment">
 
     <ImageView
@@ -13,11 +14,10 @@
         android:layout_gravity="center"
         android:background="#00FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintHorizontal_bias="0.483"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/age1" />
-
 
     <TextView
         android:id="@+id/totalpa"
@@ -50,14 +50,14 @@
         app:layout_constraintTop_toTopOf="@+id/view" />
 
     <TextView
-        android:id="@+id/danger"
+        android:id="@+id/board"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="84dp"
         android:layout_marginTop="32dp"
         android:fontFamily="@font/bmjua"
         android:gravity="center_horizontal"
-        android:text="위중증자"
+        android:text="해외발생"
         android:textColor="#707070"
         android:textSize="12sp"
         android:textStyle="normal"
@@ -65,7 +65,7 @@
         app:layout_constraintTop_toTopOf="@+id/view" />
 
     <TextView
-        android:id="@+id/end"
+        android:id="@+id/covidRate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="92dp"
@@ -73,12 +73,12 @@
         android:layout_marginRight="52dp"
         android:fontFamily="@font/bmjua"
         android:gravity="center_horizontal"
-        android:text="완치"
+        android:text="발생률"
         android:textColor="#707070"
         android:textSize="12sp"
         android:textStyle="normal"
         app:layout_constraintRight_toRightOf="@id/view"
-        app:layout_constraintStart_toStartOf="@+id/danger"
+        app:layout_constraintStart_toStartOf="@+id/board"
         app:layout_constraintTop_toTopOf="@+id/view" />
 
     <TextView
@@ -90,6 +90,7 @@
         android:fontFamily="@font/bmjua"
         android:text="13,095,631"
         android:textSize="16sp"
+        android:textColor="#e22020"
         app:layout_constraintBottom_toBottomOf="@+id/view"
         app:layout_constraintStart_toStartOf="@+id/view"
         app:layout_constraintTop_toBottomOf="@+id/totalpa"
@@ -99,25 +100,28 @@
         android:id="@+id/dead"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="88dp"
+        android:layout_marginStart="100dp"
         android:layout_marginTop="27dp"
         android:fontFamily="@font/bmjua"
         android:text="13,095,631"
+        android:textColor="#327bc4"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="@+id/view"
         app:layout_constraintStart_toStartOf="@+id/total_covid"
         app:layout_constraintTop_toBottomOf="@+id/totalpa"
         app:layout_constraintVertical_bias="0.0" />
 
+
     <TextView
         android:id="@+id/critically_ill"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="88dp"
+        android:layout_marginStart="104dp"
         android:layout_marginTop="27dp"
         android:fontFamily="@font/bmjua"
         android:text="13,095,631"
         android:textSize="16sp"
+        android:textColor="#f6bb43"
         app:layout_constraintBottom_toBottomOf="@+id/view"
         app:layout_constraintStart_toStartOf="@+id/dead"
         app:layout_constraintTop_toBottomOf="@+id/totalpa"
@@ -127,7 +131,7 @@
         android:id="@+id/cure"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="88dp"
+        android:layout_marginStart="76dp"
         android:layout_marginTop="73dp"
         android:fontFamily="@font/bmjua"
         android:text="13,095,631"
@@ -141,13 +145,137 @@
         android:id="@+id/view2"
         android:layout_width="171dp"
         android:layout_height="163dp"
-        android:layout_marginStart="18dp"
-        android:layout_marginTop="34dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="40dp"
         android:background="@drawable/age2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view" />
 
+    <TextView
+        android:id="@+id/man"
+        android:layout_width="0dp"
+        android:layout_height="13dp"
+        android:layout_marginStart="74dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/bmjua"
+        android:gravity="center_horizontal"
+        android:text="남성"
+        android:textColor="#707070"
+        android:textSize="12sp"
+        android:textStyle="normal"
+        app:layout_constraintStart_toStartOf="@+id/view2"
+        app:layout_constraintTop_toTopOf="@+id/view2" />
+
     <View
+        android:id="@+id/a"
+        android:layout_width="148dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="48dp"
+        android:background="@drawable/total"
+        app:layout_constraintEnd_toEndOf="@+id/view2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/view2"
+        app:layout_constraintTop_toTopOf="@+id/view2"/>
+
+
+    <TextView
+        android:id="@+id/abc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:fontFamily="@font/bmjua"
+        android:gravity="center_horizontal"
+        android:text="총 확진자"
+        android:textColor="#707070"
+        android:textSize="12sp"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toBottomOf="@+id/a"
+        app:layout_constraintStart_toStartOf="@+id/a"
+        app:layout_constraintTop_toTopOf="@+id/a"
+        app:layout_constraintVertical_bias="0.562" />
+
+    <TextView
+        android:id="@+id/man_total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:fontFamily="@font/bmjua"
+        android:gravity="center_horizontal"
+        android:text="164,257"
+        android:textColor="#f6bb43"
+        android:textSize="12sp"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toBottomOf="@+id/a"
+        app:layout_constraintStart_toStartOf="@+id/abc"
+        app:layout_constraintTop_toTopOf="@+id/a"
+        app:layout_constraintVertical_bias="0.562" />
+
+    <TextView
+        android:id="@+id/aaaaa"
+        android:layout_width="0dp"
+        android:layout_height="13dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="44dp"
+        android:fontFamily="@font/bmjua"
+        android:gravity="center_horizontal"
+        android:text="총 사망자"
+        android:textColor="#707070"
+        android:textSize="12sp"
+        android:textStyle="normal"
+        app:layout_constraintStart_toStartOf="@+id/view2"
+        app:layout_constraintTop_toTopOf="@+id/a" />
+
+
+    <TextView
+        android:id="@+id/man_death_total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="84dp"
+        android:layout_marginTop="14dp"
+        android:fontFamily="@font/bmjua"
+        android:gravity="center_horizontal"
+        android:text="164,257"
+        android:textColor="#e22020"
+        android:textSize="12sp"
+        android:textStyle="normal"
+        app:layout_constraintStart_toStartOf="@+id/aaaaa"
+        app:layout_constraintTop_toBottomOf="@+id/a" />
+
+    <TextView
+        android:id="@+id/abcd"
+        android:layout_width="0dp"
+        android:layout_height="13dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="28dp"
+        android:fontFamily="@font/bmjua"
+        android:gravity="center_horizontal"
+        android:text="사망률"
+        android:textColor="#707070"
+        android:textSize="12sp"
+        android:textStyle="normal"
+        app:layout_constraintStart_toStartOf="@+id/view2"
+        app:layout_constraintTop_toTopOf="@+id/aaaaa" />
+
+    <TextView
+        android:id="@+id/man_deathRate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="84dp"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/bmjua"
+        android:gravity="center_horizontal"
+        android:text="164,257"
+        android:textColor="#327bc4"
+        android:textSize="12sp"
+        android:textStyle="normal"
+        app:layout_constraintStart_toStartOf="@+id/abcd"
+        app:layout_constraintTop_toBottomOf="@+id/man_death_total" />
+
+
+
+    <View
+        android:id="@+id/view3"
         android:layout_width="171dp"
         android:layout_height="163dp"
         android:layout_marginStart="18dp"
@@ -156,7 +284,129 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view2" />
 
+    <TextView
+        android:id="@+id/woman"
+        android:layout_width="0dp"
+        android:layout_height="13dp"
+        android:layout_marginStart="74dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/bmjua"
+        android:gravity="center_horizontal"
+        android:text="여성"
+        android:textColor="#707070"
+        android:textSize="12sp"
+        android:textStyle="normal"
+        app:layout_constraintStart_toStartOf="@+id/view3"
+        app:layout_constraintTop_toTopOf="@+id/view3" />
+
     <View
+        android:id="@+id/b"
+        android:layout_width="148dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="48dp"
+        android:background="@drawable/total"
+        app:layout_constraintEnd_toEndOf="@+id/view3"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/view3"
+        app:layout_constraintTop_toTopOf="@+id/view3"/>
+
+
+    <TextView
+        android:id="@+id/seoul"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:fontFamily="@font/bmjua"
+        android:gravity="center_horizontal"
+        android:text="총 확진자"
+        android:textColor="#707070"
+        android:textSize="12sp"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toBottomOf="@+id/b"
+        app:layout_constraintStart_toStartOf="@+id/b"
+        app:layout_constraintTop_toTopOf="@+id/b" />
+
+    <TextView
+        android:id="@+id/woman_total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="56dp"
+        android:fontFamily="@font/bmjua"
+        android:gravity="center_horizontal"
+        android:text="164,257"
+        android:textColor="#f6bb43"
+        android:textSize="12sp"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toBottomOf="@+id/b"
+        app:layout_constraintStart_toStartOf="@+id/seoul"
+        app:layout_constraintTop_toTopOf="@+id/b" />
+
+    <TextView
+        android:id="@+id/seoul_board_covid"
+        android:layout_width="0dp"
+        android:layout_height="13dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="44dp"
+        android:fontFamily="@font/bmjua"
+        android:gravity="center_horizontal"
+        android:text="총 사망자"
+        android:textColor="#707070"
+        android:textSize="12sp"
+        android:textStyle="normal"
+        app:layout_constraintStart_toStartOf="@+id/view3"
+        app:layout_constraintTop_toTopOf="@+id/b" />
+
+
+    <TextView
+        android:id="@+id/woman_death_total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="84dp"
+        android:layout_marginTop="14dp"
+        android:fontFamily="@font/bmjua"
+        android:gravity="center_horizontal"
+        android:text="164,257"
+        android:textColor="#e22020"
+        android:textSize="12sp"
+        android:textStyle="normal"
+        app:layout_constraintStart_toStartOf="@+id/seoul_board_covid"
+        app:layout_constraintTop_toBottomOf="@+id/b" />
+
+    <TextView
+        android:id="@+id/dead_seoul"
+        android:layout_width="0dp"
+        android:layout_height="13dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="28dp"
+        android:fontFamily="@font/bmjua"
+        android:gravity="center_horizontal"
+        android:text="사망률"
+        android:textColor="#707070"
+        android:textSize="12sp"
+        android:textStyle="normal"
+        app:layout_constraintStart_toStartOf="@+id/view3"
+        app:layout_constraintTop_toTopOf="@+id/seoul_board_covid" />
+
+    <TextView
+        android:id="@+id/woman_deathRate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="84dp"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/bmjua"
+        android:gravity="center_horizontal"
+        android:text="164,257"
+        android:textColor="#327bc4"
+        android:textSize="12sp"
+        android:textStyle="normal"
+        app:layout_constraintStart_toStartOf="@+id/dead_seoul"
+        app:layout_constraintTop_toBottomOf="@+id/woman_death_total" />
+
+
+
+    <View
+        android:id="@+id/view4"
         android:layout_width="171dp"
         android:layout_height="343dp"
         android:layout_marginTop="34dp"
@@ -164,5 +414,290 @@
         android:background="@drawable/age3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view" />
+
+    <TextView
+        android:id="@+id/vaccine"
+        android:layout_width="0dp"
+        android:layout_height="13dp"
+        android:layout_marginTop="28dp"
+        android:fontFamily="@font/bmjua"
+        android:gravity="center_horizontal"
+        android:text="연령별 현황"
+        android:textColor="#707070"
+        android:textSize="12sp"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="@+id/view4"
+        app:layout_constraintStart_toStartOf="@+id/view4"
+        app:layout_constraintTop_toTopOf="@+id/view4" />
+
+    <TextView
+        android:id="@+id/one_vaccine"
+        android:layout_width="0dp"
+        android:layout_height="13dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="38dp"
+        android:fontFamily="@font/bmjua"
+        android:gravity="center_horizontal"
+        android:text="0-9살"
+        android:textColor="#707070"
+        android:textSize="12sp"
+        android:textStyle="normal"
+        app:layout_constraintStart_toStartOf="@+id/view4"
+        app:layout_constraintTop_toTopOf="@+id/vaccine" />
+
+    <TextView
+        android:id="@+id/two_vaccine"
+        android:layout_width="0dp"
+        android:layout_height="13dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/bmjua"
+        android:gravity="center_horizontal"
+        android:text="10-19살"
+        android:textColor="#707070"
+        android:textSize="12sp"
+        android:textStyle="normal"
+        app:layout_constraintStart_toStartOf="@+id/view4"
+        app:layout_constraintTop_toTopOf="@+id/one_vaccine" />
+
+    <TextView
+        android:id="@+id/three_vaccine"
+        android:layout_width="0dp"
+        android:layout_height="13dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/bmjua"
+        android:gravity="center_horizontal"
+        android:text="20-29살"
+        android:textColor="#707070"
+        android:textSize="12sp"
+        android:textStyle="normal"
+        app:layout_constraintStart_toStartOf="@+id/view4"
+        app:layout_constraintTop_toTopOf="@+id/two_vaccine" />
+
+    <TextView
+        android:id="@+id/one_vaccineRate"
+        android:layout_width="0dp"
+        android:layout_height="13dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/bmjua"
+        android:gravity="center_horizontal"
+        android:text="30-39살"
+        android:textColor="#707070"
+        android:textSize="12sp"
+        android:textStyle="normal"
+        app:layout_constraintStart_toStartOf="@+id/view4"
+        app:layout_constraintTop_toTopOf="@+id/three_vaccine" />
+
+    <TextView
+        android:id="@+id/two_vaccineRate"
+        android:layout_width="0dp"
+        android:layout_height="13dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/bmjua"
+        android:gravity="center_horizontal"
+        android:text="40-49살"
+        android:textColor="#707070"
+        android:textSize="12sp"
+        android:textStyle="normal"
+        app:layout_constraintStart_toStartOf="@+id/view4"
+        app:layout_constraintTop_toTopOf="@+id/one_vaccineRate" />
+
+    <TextView
+        android:id="@+id/three_vaccineRate"
+        android:layout_width="0dp"
+        android:layout_height="13dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/bmjua"
+        android:gravity="center_horizontal"
+        android:text="50-59살"
+        android:textColor="#707070"
+        android:textSize="12sp"
+        android:textStyle="normal"
+        app:layout_constraintStart_toStartOf="@+id/view4"
+        app:layout_constraintTop_toTopOf="@+id/two_vaccineRate" />
+
+    <TextView
+        android:id="@+id/age0_total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="38dp"
+        android:fontFamily="@font/bmjua"
+        android:gravity="center_horizontal"
+        android:text="45,048,812"
+        android:textColor="#e22020"
+        android:textSize="12sp"
+        android:textStyle="normal"
+        app:layout_constraintStart_toStartOf="@+id/one_vaccine"
+        app:layout_constraintTop_toTopOf="@+id/vaccine" />
+
+    <TextView
+        android:id="@+id/age10_total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/bmjua"
+        android:gravity="center_horizontal"
+        android:text="44,569,425"
+        android:textColor="#e22020"
+        android:textSize="12sp"
+        android:textStyle="normal"
+        app:layout_constraintStart_toStartOf="@+id/one_vaccine"
+        app:layout_constraintTop_toTopOf="@+id/age0_total" />
+
+    <TextView
+        android:id="@+id/age20_total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/bmjua"
+        android:gravity="center_horizontal"
+        android:text="33,262,827"
+        android:textColor="#e22020"
+        android:textSize="12sp"
+        android:textStyle="normal"
+        app:layout_constraintStart_toStartOf="@+id/one_vaccine"
+        app:layout_constraintTop_toTopOf="@+id/age10_total" />
+
+    <TextView
+        android:id="@+id/age30_total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/bmjua"
+        android:gravity="center_horizontal"
+        android:text="528"
+        android:textColor="#e22020"
+        android:textSize="12sp"
+        android:textStyle="normal"
+        app:layout_constraintStart_toStartOf="@+id/one_vaccine"
+        app:layout_constraintTop_toTopOf="@+id/age20_total" />
+
+    <TextView
+        android:id="@+id/age40_total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/bmjua"
+        android:gravity="center_horizontal"
+        android:text="770"
+        android:textColor="#e22020"
+        android:textSize="12sp"
+        android:textStyle="normal"
+        app:layout_constraintStart_toStartOf="@+id/one_vaccine"
+        app:layout_constraintTop_toTopOf="@+id/age30_total" />
+
+    <TextView
+        android:id="@+id/age50_total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/bmjua"
+        android:gravity="center_horizontal"
+        android:text="2,926"
+        android:textColor="#e22020"
+        android:textSize="12sp"
+        android:textStyle="normal"
+        app:layout_constraintStart_toStartOf="@+id/one_vaccine"
+        app:layout_constraintTop_toTopOf="@+id/age40_total" />
+
+    <TextView
+        android:id="@+id/age60"
+        android:layout_width="0dp"
+        android:layout_height="13dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/bmjua"
+        android:gravity="center_horizontal"
+        android:text="60-69살"
+        android:textColor="#707070"
+        android:textSize="12sp"
+        android:textStyle="normal"
+        app:layout_constraintStart_toStartOf="@+id/view4"
+        app:layout_constraintTop_toTopOf="@+id/three_vaccineRate" />
+
+    <TextView
+        android:id="@+id/age70"
+        android:layout_width="0dp"
+        android:layout_height="13dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/bmjua"
+        android:gravity="center_horizontal"
+        android:text="70-79살"
+        android:textColor="#707070"
+        android:textSize="12sp"
+        android:textStyle="normal"
+        app:layout_constraintStart_toStartOf="@+id/view4"
+        app:layout_constraintTop_toTopOf="@+id/age60" />
+
+    <TextView
+        android:id="@+id/age80up"
+        android:layout_width="0dp"
+        android:layout_height="13dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/bmjua"
+        android:gravity="center_horizontal"
+        android:text="80살 이상"
+        android:textColor="#707070"
+        android:textSize="12sp"
+        android:textStyle="normal"
+        app:layout_constraintStart_toStartOf="@+id/view4"
+        app:layout_constraintTop_toTopOf="@+id/age70"/>
+
+    <TextView
+        android:id="@+id/age60_total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/bmjua"
+        android:gravity="center_horizontal"
+        android:text="2,926"
+        android:textColor="#e22020"
+        android:textSize="12sp"
+        android:textStyle="normal"
+        app:layout_constraintStart_toStartOf="@+id/one_vaccine"
+        app:layout_constraintTop_toTopOf="@+id/age50_total" />
+
+    <TextView
+        android:id="@+id/age70_total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/bmjua"
+        android:gravity="center_horizontal"
+        android:text="2,926"
+        android:textColor="#e22020"
+        android:textSize="12sp"
+        android:textStyle="normal"
+        app:layout_constraintStart_toStartOf="@+id/one_vaccine"
+        app:layout_constraintTop_toTopOf="@+id/age60_total" />
+
+    <TextView
+        android:id="@+id/age80_total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/bmjua"
+        android:gravity="center_horizontal"
+        android:text="2,926"
+        android:textColor="#e22020"
+        android:textSize="12sp"
+        android:textStyle="normal"
+        app:layout_constraintStart_toStartOf="@+id/one_vaccine"
+        app:layout_constraintTop_toTopOf="@+id/age70_total" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

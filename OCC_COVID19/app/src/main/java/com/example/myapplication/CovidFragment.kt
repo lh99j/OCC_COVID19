@@ -48,9 +48,11 @@ class CovidFragment : Fragment() {
         //API 정보를 가지고 있는 주소
         var url = "http://openapi.data.go.kr/openapi/service/rest/Covid19/getCovid19SidoInfStateJson?serviceKey="+key+pageNo+numOfRows+startCreateDt+endCreateDt
 
-        val thread = Thread(NetworkThread(url))
+        val thread = Thread(NetworkThread_covid(url))
         thread.start() //쓰레드 시작
         thread.join()
+
+
 
         val dec = DecimalFormat("#,###")
 
@@ -60,8 +62,11 @@ class CovidFragment : Fragment() {
         binding.seoulTotal.text = dec.format(seoul_total_string.toInt())
         binding.seoulBoardTotal.text = dec.format(seoul_board_string.toInt())
         binding.seoulDeadTotal.text = dec.format(seoul_dead_string.toInt())
+        binding.totalCovid.text = dec.format(total_string.toInt())
+        binding.dead.text = dec.format(death_string.toInt())
+        binding.criticallyIll.text = dec.format(board_string.toInt())
+        binding.cure.text = dec.format(covidRate.toInt())
 
         return binding.root
     }
-
 }

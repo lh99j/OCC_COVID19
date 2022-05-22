@@ -5,55 +5,75 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.myapplication.databinding.FragmentAgeBinding
+import java.text.DecimalFormat
+import java.text.SimpleDateFormat
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [AgeFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class AgeFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    lateinit var binding : FragmentAgeBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_age, container, false)
-    }
+        binding = FragmentAgeBinding.inflate(inflater, container, false)
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment AgeFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            AgeFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+        //현재시간 구하기
+        val Time : Long = System.currentTimeMillis()
+        val Timestr = SimpleDateFormat("yyyy-MM-dd").format(Time)
+        val CurrentTime = Timestr.replace("[^0-9]".toRegex(), "")
+
+        //키값
+        val key = "${BuildConfig.App_key}"
+        //현재 페이지번호
+        val pageNo = "&pageNo=1"
+        //한 페이지 결과 수
+        val numOfRows = "&numOfRows=10"
+        // 검색할 생성일 범위의 시작
+        val startCreateDt = "&startCreateDt=${CurrentTime}"
+        //검색할 생성일 범의의 끝
+        val endCreateDt = "&endCreateDt=${CurrentTime}"
+        //API 정보를 가지고 있는 주소(코로나 연령별 현황)
+        var age_url = "http://openapi.data.go.kr/openapi/service/rest/Covid19/getCovid19GenAgeCaseInfJson?serviceKey="+key+pageNo+numOfRows+startCreateDt+endCreateDt
+
+        //API 정보를 가지고 있는 주소(코로나 전체 현황)
+        var covid_url = "http://openapi.data.go.kr/openapi/service/rest/Covid19/getCovid19SidoInfStateJson?serviceKey="+key+pageNo+numOfRows+startCreateDt+endCreateDt
+
+
+        val covid_thread = Thread(NetworkThread_covid(covid_url))
+        covid_thread.start() //쓰레드 시작
+        covid_thread.join()
+
+        val age_thread = Thread(NetworkThread_age(age_url))
+        age_thread.start() //쓰레드 시작
+        age_thread.join()
+
+        val dec = DecimalFormat("#,###")
+
+        binding.totalCovid.text = dec.format(total_string.toInt())
+        binding.dead.text = dec.format(death_string.toInt())
+        binding.criticallyIll.text = dec.format(board_string.toInt())
+        binding.cure.text = dec.format(covidRate.toInt())
+
+        binding.manTotal.text = dec.format(man_total.toInt())
+        binding.manDeathTotal.text = dec.format(man_dead_total.toInt())
+        binding.manDeathRate.text = man_dead_Rate
+        binding.womanTotal.text = dec.format(woman_total.toInt())
+        binding.womanDeathTotal.text = dec.format(woman_dead_total.toInt())
+        binding.womanDeathRate.text = woman_dead_Rate
+
+        binding.age0Total.text = dec.format(age0.toInt())
+        binding.age10Total.text = dec.format(age10.toInt())
+        binding.age20Total.text = dec.format(age20.toInt())
+        binding.age30Total.text = dec.format(age30.toInt())
+        binding.age40Total.text = dec.format(age40.toInt())
+        binding.age50Total.text = dec.format(age50.toInt())
+        binding.age60Total.text = dec.format(age60.toInt())
+        binding.age70Total.text = dec.format(age70.toInt())
+        binding.age80Total.text = dec.format(age80.toInt())
+
+
+        return binding.root
     }
 }
