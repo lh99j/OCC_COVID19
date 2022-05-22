@@ -21,7 +21,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="33dp"
+            android:layout_marginStart="37dp"
             android:layout_marginTop="16dp"
             android:fontFamily="@font/bmjua"
             android:text="COVID-19"
@@ -30,12 +30,54 @@
             android:textStyle="normal"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <View
+                android:id="@+id/searchbar"
+                android:layout_width="317dp"
+                android:layout_height="47dp"
+                android:background="@drawable/searchbar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginEnd="16dp"
+                android:src="@drawable/searchimg"
+                app:layout_constraintBottom_toBottomOf="@+id/searchbar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/searchbar"
+                app:layout_constraintVertical_bias="0.47" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:fontFamily="@font/bmjua"
+                android:gravity="center_horizontal"
+                android:text="Search"
+                android:textColor="#707070"
+                android:textSize="17sp"
+                android:textStyle="normal"
+                app:layout_constraintBottom_toBottomOf="@+id/searchbar"
+                app:layout_constraintStart_toStartOf="@+id/searchbar"
+                app:layout_constraintTop_toTopOf="@+id/searchbar" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize" />
 
     </com.google.android.material.appbar.AppBarLayout>
+
 
 
     <FrameLayout
