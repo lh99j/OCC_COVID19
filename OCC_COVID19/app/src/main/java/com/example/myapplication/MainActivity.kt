@@ -17,6 +17,13 @@ import java.time.LocalDateTime
 
 
 var text = ""
+var jeju_total_string = ""
+var jeju_board_string = ""
+var jeju_dead_string = ""
+var seoul_total_string = ""
+var seoul_board_string = ""
+var seoul_dead_string = ""
+
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
@@ -91,23 +98,16 @@ var url: String): Runnable {
                     }
 
 
-                    println("=========${i+1}=========")
-                    text += "${i + 1}번 \n"
+                    if((elem.getElementsByTagName("gubun").item(0).textContent).equals("제주")){
+                        jeju_total_string = "${elem.getElementsByTagName("defCnt").item(0).textContent}"
+                        jeju_board_string = "${elem.getElementsByTagName("overFlowCnt").item(0).textContent}"
+                        jeju_dead_string = "${elem.getElementsByTagName("deathCnt").item(0).textContent}"
+                    }else if((elem.getElementsByTagName("gubun").item(0).textContent).equals("서울")){
+                        seoul_total_string = "${elem.getElementsByTagName("defCnt").item(0).textContent}"
+                        seoul_board_string = "${elem.getElementsByTagName("overFlowCnt").item(0).textContent}"
+                        seoul_dead_string = "${elem.getElementsByTagName("deathCnt").item(0).textContent}"
+                    }
 
-                    println("1. 기준일시 : ${elem.getElementsByTagName("stdDay").item(0).textContent}")
-                    text += "1. 기준일시 : ${elem.getElementsByTagName("stdDay").item(0).textContent} \n"
-
-                    println("2. 사망자 수 : ${elem.getElementsByTagName("deathCnt").item(0).textContent}")
-                    text += "2. 사망자 수 : ${elem.getElementsByTagName("deathCnt").item(0).textContent} \n"
-
-                    println("3. 시도명 : ${elem.getElementsByTagName("gubun").item(0).textContent}")
-                    text += "3. 시도명 : ${elem.getElementsByTagName("gubun").item(0).textContent} \n"
-
-                    println("4. 전일대비 증감 수 : ${elem.getElementsByTagName("incDec").item(0).textContent}")
-                    text += "4. 전일대비 증감 수 : ${elem.getElementsByTagName("incDec").item(0).textContent} \n"
-
-                    println("5. 확진자 수 : ${elem.getElementsByTagName("defCnt").item(0).textContent}")
-                    text += "5. 확진자 수 : ${elem.getElementsByTagName("defCnt").item(0).textContent} \n"
 
                 }
             }
