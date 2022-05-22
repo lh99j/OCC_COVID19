@@ -23,10 +23,11 @@ class HomeActivity : AppCompatActivity() {
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivityHomeBinding.inflate(layoutInflater)
-
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main2)
+        setContentView(binding.root)
+
         supportFragmentManager.beginTransaction().add(fl.id, HomeFragment()).commit()
+
 
         bn.setOnItemSelectedListener {
             replaceFragment(
@@ -38,6 +39,7 @@ class HomeActivity : AppCompatActivity() {
             )
             true
         }
+
     }
 
     private fun replaceFragment(fragment : Fragment){

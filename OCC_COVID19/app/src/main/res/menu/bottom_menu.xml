@@ -1,23 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:title="Home"
+        android:title="홈"
         android:enabled="true"
         android:id="@+id/menu_home"
-        android:icon="@android:drawable/ic_menu_search" />
+        android:icon="@drawable/home"
+        app:showAsAction="never"/>
     <item
-        android:title="Favorites"
+        android:title="관심목록"
         android:enabled="true"
         android:id="@+id/menu_favorites"
-        android:icon="@android:drawable/ic_menu_search" />
+        android:icon="@drawable/heart"
+        app:showAsAction="never"/>
     <item
-        android:title="Email"
+        android:title="검색"
         android:enabled="true"
         android:icon="@drawable/searchimg"
-        android:id="@+id/menu_search" />
+        android:id="@+id/menu_search"
+        app:showAsAction="never"/>
     <item
-        android:title="Email"
+        android:title="설정"
         android:enabled="true"
         android:id="@+id/menu_setting"
-        android:icon="@android:drawable/ic_menu_search" />
+        android:icon="@drawable/settings"
+        app:showAsAction="never"/>
 </menu>

@@ -51,14 +51,18 @@
         android:id="@+id/bottom_menu"
         android:layout_width="match_parent"
         android:layout_height="87dp"
+        android:paddingTop="8dp"
+        android:theme="@style/Widget.BottomNavigationView"
         android:layout_alignParentBottom="true"
-        app:itemIconSize="70dp"
         android:background="@drawable/menubar"
-        app:itemTextColor="#707070"
-        app:labelVisibilityMode="unlabeled"
+        app:itemTextColor="#000000"
+        app:labelVisibilityMode="labeled"
+        app:itemIconSize="23dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:itemTextAppearanceActive="@style/BottomNavigationView.Active"
+        app:itemTextAppearanceInactive="@style/BottomNavigationView"
         app:menu="@menu/bottom_menu" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
