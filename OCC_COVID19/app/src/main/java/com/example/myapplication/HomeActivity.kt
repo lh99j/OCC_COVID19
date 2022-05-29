@@ -33,8 +33,8 @@ class HomeActivity : AppCompatActivity() {
             replaceFragment(
                 when(it.itemId){
                     R.id.menu_home -> HomeFragment()
-                    R.id.menu_favorites -> HomeFragment()
-                    R.id.menu_search -> HomeFragment()
+                    R.id.menu_favorites -> FavlistFragment()
+                    R.id.menu_search -> SearchFragment()
                     else -> SettingFragment()
                 }
             )
